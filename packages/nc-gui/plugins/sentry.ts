@@ -4,8 +4,6 @@ import * as Sentry from '@sentry/vue'
 import { defineNuxtPlugin } from 'nuxt/app'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  if (isEeUI) return
-
   const { vueApp } = nuxtApp
 
   const env = process.env.NODE_ENV === 'production' ? 'production' : 'development'

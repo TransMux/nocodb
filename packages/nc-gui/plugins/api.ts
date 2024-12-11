@@ -6,5 +6,5 @@ const apiPlugin = (nuxtApp) => {
 export { apiPlugin }
 
 export default defineNuxtPlugin(function (nuxtApp) {
-  if (!isEeUI) return apiPlugin(nuxtApp)
+  return apiPlugin(nuxtApp)
 })

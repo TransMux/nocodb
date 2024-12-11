@@ -39,13 +39,13 @@ class ErrorReporting {
 
 export default defineNuxtPlugin((nuxtApp) => {
   if (isEeUI) {
-    nuxtApp.provide('report', function (error: Error) {
-      try {
-        Sentry.captureException(error)
-      } catch {
-        // ignore
-      }
-    })
+    // nuxtApp.provide('report', function (error: Error) {
+    //   try {
+    //     Sentry.captureException(error)
+    //   } catch {
+    //     // ignore
+    //   }
+    // })
     return
   }
 
