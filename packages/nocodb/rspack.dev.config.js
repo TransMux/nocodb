@@ -94,7 +94,8 @@ const baseDevConfig = {
     devMiddleware: {
       writeToDisk: true,
     },
-    port: 9001,
+    host: "0.0.0.0",
+    port: 6714,
   },
   watchOptions: {
     ignored: /node_modules/,

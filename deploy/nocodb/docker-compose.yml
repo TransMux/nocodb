@@ -1,0 +1,19 @@
+services: 
+  postgres: 
+    environment: 
+      POSTGRES_DB: nocodb
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: transmux
+    healthcheck: 
+      interval: 10s
+      retries: 10
+      test: "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""
+      timeout: 2s
+    image: postgres:16.6
+    restart: always
+    volumes: 
+      - "db_data:/var/lib/postgresql/data"
+    ports:
+      - "6712:5432"
+volumes: 
+  db_data: {}

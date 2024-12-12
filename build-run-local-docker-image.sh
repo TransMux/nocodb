@@ -39,7 +39,7 @@ function build_gui() {
 
 function copy_gui_artifacts() {
      # copy nc-gui build to nocodb dir
-    rsync -rvzh --delete ./dist/ ${SCRIPT_DIR}/packages/nocodb/docker/nc-gui/ || ERROR="copy_gui_artifacts failed"
+    rsync -rvzh --delete ./.output/public/ ${SCRIPT_DIR}/packages/nocodb/docker/nc-gui/ || ERROR="copy_gui_artifacts failed"
 }
 
 function package_nocodb() {
@@ -91,3 +91,4 @@ log_message | tee -a ${LOG_FILE}
 # run docker
 cd /Users/transmux/Projects/nocodb/docker-compose/noco_pg
 docker-compose up -d
+cd -
